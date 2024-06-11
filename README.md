@@ -1,2 +1,2 @@
 # meuPortifolio
-Meu perfil profissional
+Meu perfil profissional, pasta onde desenvolvo meus projetos.
