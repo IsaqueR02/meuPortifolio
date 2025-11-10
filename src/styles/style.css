@@ -1,0 +1,612 @@
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: #833c99; /* Roxo principal */
+    --cor-secundaria: #3e5872; /* Azul */
+    --cor-fundo: #faf5ff;
+    --cor-texto: #333333;
+    --cor-clara: #ffffff;
+    --cor-cinza: #6b7280;
+    --cor-preto: #000000;
+    --cor-preto-escuro: #111111;
+    --sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra-forte: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transicao: all 0.3s ease;
+    --borda-radius: 0.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Arial', Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container Geral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header e Nav - Ajustes para centralização e toggle */
+.header {
+    background-color: var(--cor-clara);
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+
+h1 {
+    color: var(--cor-secundaria);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 0;
+    flex: 1;
+}
+
+#nav-toggle {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--cor-primaria);
+    display: none; /* Oculto em desktop, visível em mobile */
+    padding: 0.5rem;
+    border-radius: var(--borda-radius);
+    transition: var(--transicao);
+}
+
+#nav-toggle:hover,
+#nav-toggle:focus {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    outline: none;
+}
+
+.nav {
+    flex: 1;
+    display: block; /* Visível por padrão */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: center; /* Centraliza os links horizontalmente */
+    gap: 1rem; /* Espaçamento reto entre itens */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicao);
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-radius);
+    display: inline-block; /* Garante alinhamento reto */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    outline: none;
+}
+
+/* Responsividade para Nav em Mobile - Toggle visível */
+@media (max-width: 768px) {
+    #nav-toggle {
+        display: block;
+    }
+    .nav {
+        display: none; /* Oculto por padrão em mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--cor-clara);
+        box-shadow: var(--sombra-suave);
+        padding: 1rem;
+    }
+    .nav.active {
+        display: block; /* Mostra quando toggle */
+    }
+    .nav-list {
+        flex-direction: column; /* Vertical em mobile */
+        gap: 0.5rem;
+        align-items: center;
+    }
+    .header .container {
+        justify-content: flex-start; /* Ajusta para toggle à direita */
+    }
+    h1 {
+        flex: none;
+    }
+}
+
+/* Main e Seções */
+.main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: var(--cor-clara);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra-suave);
+}
+
+.section h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 0.5rem;
+}
+
+.section h3 {
+    color: var(--cor-primaria);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.nome {
+    font-size: 2.5rem;
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/* Subseções (ex.: conhecimentos correlacionados) */
+.subsecao {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+}
+
+.lista-hobbies li,
+.lista-conhecimentos li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #f0f0ff;
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: var(--borda-radius);
+}
+
+.lista-conhecimentos {
+    list-style-type: none;
+}
+
+/* Tabela */
+.tabela-cursos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--cor-primaria);
+    border-radius: var(--borda-radius);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    margin-bottom: 1rem;
+}
+
+.tabela-cursos th {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    padding: 1rem;
+    text-align: left;
+}
+
+.tabela-cursos td {
+    padding: 1rem;
+    background-color: var(--cor-clara);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabela-cursos tr:nth-child(even) td {
+    background-color: #f9f9ff;
+}
+
+.description {
+    text-align: justify;
+}
+
+/* Projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.projeto-item {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicao);
+    border-left: 4px solid var(--cor-primaria);
+    position: relative; /* Para posicionar botão remover */
+}
+
+.projeto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-forte);
+}
+
+.projeto-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.projeto-item h3 {
+    color: var(--cor-primaria);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: var(--transicao);
+}
+
+.projeto-item h3:hover {
+    text-decoration: underline;
+}
+
+.projeto-item p {
+    color: var(--cor-cinza);
+    line-height: 1.6;
+}
+
+/* Botão Remover em Projetos Dinâmicos */
+.btn-remover {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #ef4444;
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transicao);
+}
+
+.btn-remover:hover {
+    background-color: #dc2626;
+}
+
+/* Formulário de Adicionar Projeto */
+#btn-adicionar {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: var(--transicao);
+    margin: 1rem 0;
+    display: block;
+    margin-left: auto;
+}
+
+#btn-adicionar:hover,
+#btn-adicionar:focus {
+    background-color: var(--cor-primaria);
+    outline: none;
+}
+
+#add-project-form {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra-suave);
+    margin: 1rem 0;
+    border-left: 4px solid var(--cor-secundaria);
+}
+
+#add-project-form h3 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+#add-project-form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+#add-project-form input,
+#add-project-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--borda-radius);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+#add-project-form input:focus,
+#add-project-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px rgba(131, 60, 153, 0.2);
+}
+
+#add-project-form button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+#add-project-form button[type="submit"]:hover {
+    background-color: var(--cor-preto-escuro);
+}
+
+#cancelar-adicionar {
+    background-color: #6b7280;
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#cancelar-adicionar:hover {
+    background-color: #4b5563;
+}
+
+/* Links Gerais */
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicao);
+}
+
+a:hover,
+a:focus {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+    outline: none;
+}
+
+.fechado {
+    display: none;
+    transition: opacity 0.3s ease; /* Suave para toggles */
+}
+
+.externo {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    font-weight: normal;
+    margin-left: 0.25rem;
+}
+
+/* Botões de Toggle (para expandir/recolher - use class no JS) */
+.btn-toggle {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: var(--transicao);
+    margin-left: 1rem;
+}
+
+.btn-toggle:hover,
+.btn-toggle:focus {
+    background-color: var(--cor-primaria);
+    outline: none;
+}
+
+/* Controles de Hobbies Dinâmicos (use class no JS) */
+.btn-hobby-control {
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-clara);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: var(--transicao);
+}
+
+.btn-hobby-control.remover {
+    background-color: var(--cor-primaria);
+}
+
+.btn-hobby-control:hover,
+.btn-hobby-control:focus {
+    background-color: var(--cor-preto-escuro);
+    outline: none;
+}
+
+.btn-hobby-control:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#hobbiesDinamicos {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+/* Footer (Todo Preto com Texto Branco) */
+.footer {
+    background-color: var(--cor-preto);
+    color: var(--cor-clara);
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.form-section,
+.footer-copyright {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-contato {
+    background-color: var(--cor-preto-escuro);
+    padding: 2rem;
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-clara);
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+legend {
+    background-color: var(--cor-preto);
+    color: var(--cor-clara);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--cor-clara);
+    border-radius: var(--borda-radius);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--cor-clara);
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--cor-clara);
+    border-radius: var(--borda-radius);
+    background-color: var(--cor-clara);
+    color: var(--cor-texto);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px rgba(131, 60, 153, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-clara);
+    border: none;
+    padding: 1rem;
+    border-radius: var(--borda-radius);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transicao);
+    width: auto;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+button[type="submit"]:active {
+    background-color: var(--cor-preto-escuro);
+    outline: none;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--cor-clara);
+}
+
+.copyright a {
+    color: var(--cor-clara);
+    text-decoration: underline;
+}
+
+.copyright a:hover {
+    color: var(--cor-primaria);
+}
+
+/* Responsividade para Footer/Form em Mobile */
+@media (max-width: 768px) {
+    .footer .container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .form-contato {
+        padding: 1rem;
+    }
+}
