@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio de Desenvolvedor</title>
+  <link href='./src/styles/style.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+      <div class="container">
+        <h1>Portfólio</h1>
+        <!-- Botão de toggle para o nav, à direita -->
+        <button id="nav-toggle" class="btn-toggle" aria-expanded="false">☰ Menu</button>
+        <!-- Nav - Menu de navegação principal -->
+        <nav class="nav">
+          <ul class="nav-list">
+              <li><a href="#sobre" class="nav-link">Home</a></li>
+              <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+              <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+              <li><a href="#projetos" class="nav-link">Projetos</a></li>
+              <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>  
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <!-- Apresentação - Sobre mim -->
+        <section id="sobre" class="section sobre">
+          <h2>Sobre Mim</h2>
+          <p>Sou Isaque, tenho 21 anos, estudante apaixonado por tecnologia, jogos e inovação. Sou hiper focado em programação, animes e desenhos, filmes e curiosidades que me ajudem a crescer na carreira. Sou dedicado aos estudos, busco constantemente aprender e aplicar novos conhecimentos.</p>
+        </section>
+        <section id="dicas" class="section dicas">
+          <h2>Dicas Interessantes</h2>
+          <p><a class="tip" href="https://www.youtube.com/shorts/aj3KWL_ZVqQ">Melhore seu estudo com essa ferramenta</a>, para quem quer aprender é muito útil.</p>
+        </section>
+        <!-- Conhecimentos - Formações, Cursos, Ferramentas -->
+        <section id="conhecimentos" class="section conhecimentos">
+          <h2>Conhecimentos</h2>
+          <h3>Formações e Cursos</h3>
+          <table class="tabela-cursos">
+            <thead>
+              <tr>
+                <th>Curso/Formação</th>
+                <th>Descrição</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Ensino Médio Técnico em Informática, da Funec Riacho</td>
+              <td class="description">O curso de TI da Funec é voltado para formar profissionais capazes de desenvolver, gerenciar e dar suporte a sistemas computacionais e soluções tecnológicas.</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.credly.com/badges/20a5a67c-afd9-4d13-8b13-95e41e848a76/linked_in_profile">Artificial Intelligence Fundamentals with Capstone Project, da IBM SkillsBuild</a></td>
+              <td class="description">O curso oferecido pela IBM demonstra o conhecimento do candidato de conceitos de inteligência artificial (IA), como processamento de linguagem natural, visão computacional, aprendizado de máquina, aprendizado profundo, chatbots, redes neurais e ética. O candidato possui habilidades práticas para aplicar conhecimentos de IA a uma variedade de cenários, incluindo a escrita de prompts eficazes para modelos de linguagem de IA.</td>
+            </tr>
+            <tr>
+              <td><a href="https://cursos.alura.com.br/degree/certificate/576d4b2c-a44e-4d7b-a3bb-d92d5791d07f?lang=pt_BR">A partir do zero: iniciante em programação</a></td>
+              <td class="description">Formação da Alura, onde pude aprofundar meus conhecimentos fundamentais de HTML, CSS e JavaScript. Durante o curso, explorei desde os fundamentos de lógica de programação até práticas essenciais para a construção de páginas interativas e dinâmicas.</td>
+            </tr>
+            <tr>
+              <td><a href="https://hermes.dio.me/certificates/EC7HF8TD.pdf">Introdução ao React</a></td>
+              <td class="description">Durante esse módulo, tive a oportunidade de aprender e colocar em prática conceitos essenciais do React, uma biblioteca muito usada em desenvolvimento front-end.</td>
+            </tr>
+            </tbody>
+          </table>
+          <div id="conhecimentos-correlacionados" class="subsecao">
+            <h3>Conhecimentos Correlacionados</h3>
+            <ol class="lista-conhecimentos">
+              <li>Comunicação</li>
+              <li>Java</li>
+              <li>C/ C++</li>
+              <li>C#</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+            </ol>
+          </div>
+        </section>
+        <!-- Projetos e Áreas de Estudo -->
+        <section id="projetos" class="section projetos">
+          <h2>Projetos e Aplicações</h2>
+          <div class="projetos-grid">
+            <!-- Projeto 1: GitAutomate -->
+            <article class="projeto-item">
+              <a href="https://github.com/IsaqueR02/GitAutomate" class="projeto-link">
+                <h3>Projeto Git Automático (Python)</h3>
+              </a>
+              <p>Um script em Python desenvolvido para facilitar e automatizar o fluxo de trabalho com Git (commit, push, etc.). Foco na otimização de tempo e redução de comandos repetitivos.</p>
+            </article>
+            <!-- Projeto 2: Blog de RapGeek -->
+            <article class="projeto-item">
+              <a href="https://github.com/IsaqueR02/RapGeek" class="projeto-link">
+                <h3>Blog de RapGeek (Web Development)</h3>
+              </a>
+              <p>Website pessoal focado em expressar opiniões sobre o universo Rap Geek. Um projeto prático para aprimorar habilidades de HTML, CSS e layout responsivo.</p>
+            </article>
+            <!-- Projeto 3: Dev Game Exercise (Java) -->
+            <article class="projeto-item">
+              <a href="https://github.com/IsaqueR02/Dev-Game-Exercise" class="projeto-link">
+                <h3>Sistema de Personagens para Jogo (Java)</h3>
+              </a>
+              <p>Sistema em Java que utiliza herança e orientação a objetos para gerenciar personagens de um jogo. O projeto também focou em organização de equipe usando GitHub Issues e Projects.</p>
+            </article>
+          </div>
+          <!-- Formulário de Adição de Projeto -->
+          <form id="add-project-form" class="form-section" style="display: none;">
+            <h3>Adicionar Novo Projeto</h3>
+            <label for="projeto-nome">Nome do Projeto:</label>
+            <input type="text" id="projeto-nome" required>
+            <label for="projeto-url">URL do Projeto:</label>
+            <input type="url" id="projeto-url" required>
+            <label for="projeto-desc">Descrição do Projeto:</label>
+            <textarea id="projeto-desc" rows="3" required></textarea>
+            <button type="submit">Adicionar Projeto</button>
+            <button type="button" id="cancelar-adicionar">Cancelar</button>
+          </form>
+          <button type="button" id="btn-adicionar">Adicionar Projeto</button>
+        </section>
+        <section id="objetivos" class="section experiencias">
+          <h2>Objetivos</h2>
+          <p>Meus objetivos incluem me tornar um desenvolvedor de software especializado em Soluções de problemas, Implementar Automoções com Tecnologia, Desenvolver IA e outras áreas relacionadas como a robótica, jogos e IoT, contribuindo para projetos inovadores e que trazem impacto a humanidade. Busco oportunidades de estágio e crescimento contínuo.</p>
+        </section>
+        <section id="hobbies" class="section hobbies">
+          <h2>Hobbies</h2>
+          <ul class="lista-hobbies">
+            <li>
+              <h3>Jogar</h3>
+              <p>Sou um cara que gosta bastante de jogos, tanto que gostaria de platinar outros que tenho na minha biblioteca da PlayStation. E não, não sou Sonyta.</p>
+            </li>
+            <li>
+              <h3>Assistir Animes</h3>
+              <p>Posso afirmar que sou um Otaku, mas sou bem reservado e educado, além de tomar banho diariamente, tanto que tenho minha nomenclatura própria de "Nerd".</p>
+            </li>
+            <li>
+              <h3>Ler</h3>
+              <p>Sou amante de leitura seja de livros, revistas em quadrinhos, mangás ou artigos e diálogos de jogo.</p>
+            </li>
+            <li>
+              <h3>Desenhar</h3>
+              <p>Gosto de desenhar criaturas mitológicas, objetos que vejo e personagens que gosto ou que imagino em minha mente.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <footer id="contato" class="footer">
+      <div class="container">
+        <section class="form-section">
+          <form action="contato" class="form-contato">
+            <fieldset>
+              <legend>Contato</legend>
+              <label for="name">Nome:</label>
+              <input type="text" name="name" id="name" required>
+              <label for="email">E-mail:</label>
+              <input type="email" name="email" id="email" required>
+              <label for="mensagem">Mensagem:</label>
+              <textarea name="mensagem" id="mensagem" placeholder="Escreva aqui" rows="5"></textarea>
+              <button type="submit">Enviar</button>
+            </fieldset>
+          </form>
+        </section>
+        <div class="social-links">
+            <p class="links de contato">
+                <a href="https://linkedin.com/in/isaque-roberto-zulato-henriques/" target="_blank" class="linkedin">LinkedIn</a>
+                • 
+                <a href="https://github.com/IsaqueR02" target="_blank" class="github">GitHub</a>
+            </p>
+        </div>
+        <section class="footer-copyright">
+          <p class="copyright">&copy; 2025 Desenvolvido por <a href="mailto:isaquezulato@gmail.com">isaquezulato@gmail.com</a></p>
+        </section>
+      </div>
+    </footer>
+  <script src="./src/js/script.js"></script>
+</body>
+</html>
